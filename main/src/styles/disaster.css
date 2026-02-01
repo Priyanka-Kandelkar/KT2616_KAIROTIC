@@ -1,0 +1,29 @@
+.disaster-safe,
+.disaster-active,
+.authority-panel {
+  padding: 40px;
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+}
+
+.disaster-active {
+  border: 2px solid #e50914;
+  background: #161b22;
+  color: white;
+}
+
+.disaster-actions button,
+.authority-buttons button,
+.end-btn {
+  margin: 10px;
+  padding: 12px 20px;
+  background: #e50914;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.end-btn {
+  background: #555;
+}

@@ -13,9 +13,13 @@ export default function AuthorityHome() {
         <h2 className="dashboard-title">Authority Dashboard</h2>
 
         <div className="grid">
-          <div className="grid-card" onClick={() => navigate("/real-disaster")}>
+          <div
+            className="grid-card"
+            onClick={() => navigate("/authority/real-disaster")}
+          >
             <h3>Real Disaster</h3>
           </div>
+
 
           <div className="grid-card" onClick={() => navigate("/authority/map")}>
             <h3>Map</h3>

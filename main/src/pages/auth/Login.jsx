@@ -41,10 +41,9 @@ export default function Login() {
   return (
   <div className="page-container">
     <div className="card-container">
-      <h1 className="title">
-        {isSignup ? "Sign Up" : "Login"}
-      </h1>
-
+      <h1 className="login-title">
+  {isSignup ? "Sign Up" : "Login"}
+</h1>
       <p className="subtitle">
         Role: {role}
       </p>
