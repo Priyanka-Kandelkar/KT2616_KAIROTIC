@@ -17,7 +17,7 @@ export default function AuthorityHome() {
             <h3>Real Disaster</h3>
           </div>
 
-          <div className="grid-card" onClick={() => navigate("/map")}>
+          <div className="grid-card" onClick={() => navigate("/authority/map")}>
             <h3>Map</h3>
           </div>
 
@@ -26,7 +26,7 @@ export default function AuthorityHome() {
           </div>
 
           <div className="grid-card" onClick={() => navigate("/user-feedback")}>
-            <h3>User Feedback</h3>
+            <h3>Civilian Feedback</h3>
           </div>
 
           <div className="grid-card" onClick={() => navigate("/report")}>

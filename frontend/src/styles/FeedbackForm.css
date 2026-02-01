@@ -1,0 +1,104 @@
+/* ===== FEEDBACK PAGE WRAPPER ===== */
+.feedback-container {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 40px 30px;
+  font-family: "Segoe UI", sans-serif;
+  color: #f2f2f2;
+}
+
+/* ===== PAGE TITLE ===== */
+.feedback-container h1 {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 40px;
+  letter-spacing: 1.5px;
+  color: #e50914;
+}
+
+.feedback-container h1::after {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 3px;
+  background: #e50914;
+  margin: 14px auto 0;
+  border-radius: 2px;
+}
+
+/* ===== FEEDBACK CARD ===== */
+.feedback-form {
+  background: #161b22;
+  border-radius: 10px;
+  border: 1px solid #e50914;
+  box-shadow: 0 0 15px rgba(229, 9, 20, 0.25);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.feedback-form:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 25px rgba(229, 9, 20, 0.4);
+}
+
+/* ===== TEXTAREA ===== */
+.feedback-form textarea {
+  width: 100%;
+  min-height: 140px;
+  padding: 14px 16px;
+  border-radius: 6px;
+  border: 1px solid #333;
+  background: #0e1117;
+  color: #f2f2f2;
+  font-size: 15px;
+  line-height: 1.6;
+  resize: vertical;
+}
+
+.feedback-form textarea::placeholder {
+  color: #9ca3af;
+}
+
+.feedback-form textarea:focus {
+  outline: none;
+  border-color: #e50914;
+  box-shadow: 0 0 0 1px rgba(229, 9, 20, 0.6);
+}
+
+/* ===== SUBMIT BUTTON ===== */
+.feedback-form button {
+  align-self: flex-end;
+  padding: 12px 26px;
+  background: #e50914;
+  color: white;
+  font-size: 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feedback-form button:hover:not(:disabled) {
+  background: #ff1f2d;
+  box-shadow: 0 0 18px rgba(229, 9, 20, 0.6);
+}
+
+.feedback-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .feedback-container {
+    padding: 30px 20px;
+  }
+
+  .feedback-form {
+    padding: 24px 20px;
+  }
+}

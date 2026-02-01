@@ -119,5 +119,18 @@ a {
   letter-spacing: 2px;
   color: #e50914;
 }
+.input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #333;
+  background: #0e1117;
+  color: #f2f2f2;
+  font-size: 15px;
+}
 
-
+.input:focus {
+  outline: none;
+  border-color: #e50914;
+}

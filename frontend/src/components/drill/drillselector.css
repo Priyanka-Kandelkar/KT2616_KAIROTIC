@@ -1,0 +1,128 @@
+/* ===== DRILL PAGE CONTAINER ===== */
+.drill-container {
+  padding: 40px;
+  max-width: 1200px;
+  margin: auto;
+  font-family: "Segoe UI", sans-serif;
+  color: #f2f2f2;
+}
+
+.drill-container h3 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 35px;
+  color: #e50914;
+  letter-spacing: 1px;
+}
+
+/* ===== TOP RECTANGLE CARDS ===== */
+.drill-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.card {
+  background: #161b22;
+  border-radius: 10px;
+  border: 1px solid #e50914;
+  padding: 30px 20px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #f2f2f2;
+  cursor: pointer;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(229, 9, 20, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 30px rgba(229, 9, 20, 0.45);
+}
+
+/* subtle identity hints, not overpowering */
+.earthquake { border-left: 5px solid #e53935; }
+.flood { border-left: 5px solid #1e88e5; }
+.cyclone { border-left: 5px solid #8e24aa; }
+
+/* ===== INFO SECTION (FULL WIDTH BELOW) ===== */
+.detail-page {
+  position: relative;
+  background: #161b22;
+  border-radius: 10px;
+  border: 1px solid #e50914;
+  padding: 40px 50px;
+  box-shadow: 0 0 25px rgba(229, 9, 20, 0.3);
+  animation: fadeIn 0.3s ease;
+}
+
+.detail-page h3 {
+  font-size: 26px;
+  margin-top: 0;
+  color: #e50914;
+}
+
+.detail-page ul {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.detail-page li {
+  margin-bottom: 12px;
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+/* ===== CLOSE BUTTON ===== */
+.close-btn {
+  position: absolute;
+  top: 16px;
+  right: 22px;
+  font-size: 22px;
+  cursor: pointer;
+  color: #b3b3b3;
+  transition: color 0.2s ease;
+}
+
+.close-btn:hover {
+  color: #ffffff;
+}
+
+/* ===== SHELTER LINK ===== */
+.shelter-link {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 14px 22px;
+  border-radius: 6px;
+  background: #e50914;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.shelter-link:hover {
+  background: #ff1f2d;
+  box-shadow: 0 0 18px rgba(229, 9, 20, 0.5);
+}
+
+/* ===== SMALL SCREENS ===== */
+@media (max-width: 900px) {
+  .drill-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
