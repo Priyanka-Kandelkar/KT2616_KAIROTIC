@@ -1,19 +1,15 @@
 # KT2616_KAIROTIC
 Hawkins Readiness Network is an offline-first disaster preparedness prototype inspired by Stranger Things. It helps communities prepare, practice, and respond to emergencies through interactive test drills, location-based risk awareness, shelter mapping, and community feedback.
 
-PROBLEM STATEMENT
+Problem Statement:
+The current disaster preparedness only boils down to guidelines, PDFs, or posters that people quickly skim and forget. Moreover, when a disaster occurs, people get scared not because of a lack of information but because they have never rehearsed what to do, where to go, and whom to contact. It results in confusion and inaction because such key information as safe zones, emergency shelters, evacuation routes, and response teams is generally missing, old, or difficult to get during a disaster. Therefore, people simply react without thinking and hardly collaborate with each other.
 
-The current state of disaster preparedness is nothing but a piece of paper, in the form of guidelines, PDFs, or posters that people quickly scan and then forget. When a disaster actually strikes, people panic not because they do not have information, but because they have never actually practiced what to do, where to go, or whom to call.
+Proposed Idea of the Solution:                                               
+The proposed solution is a Disaster Preparedness Web Application that intends to change the unproductive awareness into productive preparedness.This application is not just a source of information, but also a medium that engages users, educates them, and evaluates them on the scenarios of disaster situations.
 
-Critical information such as safe zones, emergency shelters, evacuation routes, and response teams is either missing, outdated, or not accessible during a disaster. This causes confusion and inaction, and people are left to act impulsively rather than act together and effectively. 
-
-PROPOSED IDEA OF THE SOLUTION
-
-The proposed solution for the problem is a Disaster Preparedness Web Application that aims to convert passive awareness into active preparedness. The application not only presents information but also engages users, trains them, and tests them on real-life disaster situations.
-
-The application offers the following:
-- Disaster-related information for earthquakes, floods, and cyclones
-- Safety instructions and procedures to be followed
-- Drill options for interactive simulation of real-life emergency situations
-- Quizzes with multiple-choice options to test the preparedness of users
-- Feedback and scoring to enable users to know their weaknesses in preparedness
+The application provides:
+• Information about disasters like earthquakes, floods, and cyclones.
+• Safety instructions and measures to be taken.
+• Guided drills for an interactive simulation of a real, life emergency situation.
+• Quizzes with multiple, choice questions to test preparedness.
+• Feedback and scoring to guide users towards the areas of preparedness that need improvement
