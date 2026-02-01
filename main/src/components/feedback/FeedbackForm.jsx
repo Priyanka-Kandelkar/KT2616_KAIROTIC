@@ -14,7 +14,6 @@ export default function FeedbackForm({ areaId = null }) {
 
     setLoading(true);
 
-    // 1️⃣ get logged-in user
     const {
       data: { user },
       error: authError,
@@ -26,7 +25,6 @@ export default function FeedbackForm({ areaId = null }) {
       return;
     }
 
-    // 2️⃣ insert feedback
     const { error } = await supabase.from("feedback").insert({
       user_id: user.id,
       message: feedback,
@@ -40,7 +38,6 @@ export default function FeedbackForm({ areaId = null }) {
       return;
     }
 
-    // 3️⃣ success
     setSubmitted(true);
     setFeedback("");
     setLoading(false);

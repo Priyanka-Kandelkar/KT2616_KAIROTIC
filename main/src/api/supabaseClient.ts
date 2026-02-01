@@ -1,10 +1,5 @@
-// ============================================
-// SUPABASE CLIENT CONFIGURATION
-// ============================================
-
 import { createClient } from '@supabase/supabase-js';
 
-// Environment variables - ADD THESE TO YOUR .env FILE
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
@@ -12,7 +7,6 @@ if (!supabaseUrl || !supabaseAnonKey) {
   throw new Error('Missing Supabase environment variables. Please check your .env file.');
 }
 
-// Create a single supabase client for interacting with your database
 export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
   auth: {
     persistSession: true,
@@ -26,7 +20,6 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
   }
 });
 
-// Database Types (TypeScript support)
 export type Profile = {
   id: string;
   email: string;
@@ -112,19 +105,6 @@ export type Feedback = {
   created_at: string;
 };
 
-export type DailyReport = {
-  id: string;
-  area_id: string;
-  authority_id: string;
-  report_date: string;
-  status_summary: string;
-  drills_conducted: number;
-  shelters_operational?: number;
-  shelters_maintenance?: number;
-  active_threats?: string;
-  notes?: string;
-  created_at: string;
-};
 
 export type DisasterProtocol = {
   id: string;

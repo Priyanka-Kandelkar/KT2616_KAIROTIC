@@ -16,11 +16,10 @@ const lightnings = [l1, l2, l3];
 export default function AuthIntro() {
   const navigate = useNavigate();
 
-  const [phase, setPhase] = useState("normal"); // normal | glitch | upside
+  const [phase, setPhase] = useState("normal");
   const [lightning, setLightning] = useState(null);
   const [showRoles, setShowRoles] = useState(false);
 
-  // TIMELINE (same logic as your original intro)
   useEffect(() => {
     const t1 = setTimeout(() => setPhase("glitch"), 1200);
     const t2 = setTimeout(() => setPhase("upside"), 3000);
@@ -33,7 +32,6 @@ export default function AuthIntro() {
     };
   }, []);
 
-  // LIGHTNING only in upside
   useEffect(() => {
     if (phase !== "upside") return;
 
@@ -48,30 +46,25 @@ export default function AuthIntro() {
 
   return (
     <div className={`auth-intro ${phase}`}>
-      {/* SKY */}
       <img
         src={phase === "upside" ? skyUpside : skyNormal}
         className="layer sky"
         alt=""
       />
 
-      {/* CLOUDS */}
       <img
         src={phase === "upside" ? cloudsUpside : cloudsNormal}
         className={`layer clouds ${phase}`}
         alt=""
       />
 
-      {/* PARTICLES + NOISE */}
       <div className="particles" />
       <div className="noise" />
 
-      {/* LIGHTNING */}
       {lightning && (
         <img src={lightning} className="layer lightning" alt="" />
       )}
 
-      {/* ROLE SELECTION (ONLY AFTER UPSIDE) */}
       {showRoles && (
         <div className="role-banner">
           <h1 className="title upside">SELECT YOUR ROLE</h1>

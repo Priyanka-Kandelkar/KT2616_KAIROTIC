@@ -25,7 +25,6 @@
   height: 100%;
 }
 
-/* ALL visual layers must ignore mouse events */
 .auth-intro .layer,
 .auth-intro .noise,
 .auth-intro .particles,
@@ -39,10 +38,6 @@
   z-index: 1;
 }
 
-/* 
-.clouds.upside {
-  animation: cloudsWeird 8s ease-in-out infinite;
-} */
 .clouds.upside {
   animation: cloudsDistort 4s infinite;
 }
@@ -67,7 +62,6 @@
   padding-bottom: 150px;
 }
 
-/* ENTER BUTTON */
 .enter-btn {
   position: absolute;
   bottom: 8%;
@@ -87,7 +81,6 @@
   color: black;
 }
 
-/* NOISE */
 .noise {
   position: absolute;
   inset: 0;
@@ -101,7 +94,6 @@
   animation: noise 0.2s infinite;
 }
 
-/* PARTICLES */
 .particles {
   position: absolute;
   inset: 0;

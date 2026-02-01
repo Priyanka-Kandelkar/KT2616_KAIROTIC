@@ -33,9 +33,6 @@ export default function AuthorityHome() {
             <h3>Civilian Feedback</h3>
           </div>
 
-          <div className="grid-card" onClick={() => navigate("/report")}>
-            <h3>Report</h3>
-          </div>
         </div>
       </div>
     </>

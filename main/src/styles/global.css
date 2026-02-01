@@ -2,7 +2,6 @@
   box-sizing: border-box;
 }
 
-/* ===== BASE ===== */
 body {
   margin: 0;
   font-family: "Segoe UI", sans-serif;
@@ -15,7 +14,6 @@ a {
   color: inherit;
 }
 
-/* ===== LOGIN PAGE ===== */
 .page-container {
   min-height: 100vh;
   display: flex;
@@ -54,7 +52,6 @@ a {
   background: #ff1f2d;
 }
 
-/* ===== DASHBOARD ===== */
 .dashboard {
   padding: 40px;
 }
@@ -66,7 +63,6 @@ a {
   color: #e50914;
 }
 
-/* ===== GRID ===== */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -75,7 +71,6 @@ a {
   margin: auto;
 }
 
-/* ===== DASHBOARD CARDS ===== */
 .grid-card {
   background: #161b22;
   padding: 35px 20px;
@@ -98,7 +93,6 @@ a {
   color: #f2f2f2;
 }
 
-/* ===== TOP BANNER ===== */
 .top-banner {
   width: 100%;
   background: #161b22;

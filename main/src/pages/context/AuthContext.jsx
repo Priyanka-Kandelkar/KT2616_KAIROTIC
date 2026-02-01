@@ -9,7 +9,6 @@ export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // get current session
     const getSession = async () => {
       const {
         data: { session },
@@ -23,7 +22,6 @@ export function AuthProvider({ children }) {
 
     getSession();
 
-    // listen for auth changes
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange((_event, session) => {
@@ -43,5 +41,4 @@ export function AuthProvider({ children }) {
   );
 }
 
-// 👇 THIS IS THE IMPORTANT PART YOU WERE MISSING
 export const useAuth = () => useContext(AuthContext);

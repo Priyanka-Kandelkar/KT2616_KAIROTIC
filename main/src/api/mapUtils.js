@@ -1,11 +1,7 @@
-// ============================================
-// OPENSTREETMAP INTEGRATION WITH LEAFLET
-// ============================================
 
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
-// Fix for default marker icons in Leaflet
 import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png';
 import markerIcon from 'leaflet/dist/images/marker-icon.png';
 import markerShadow from 'leaflet/dist/images/marker-shadow.png';
@@ -17,11 +13,6 @@ L.Icon.Default.mergeOptions({
   shadowUrl: markerShadow,
 });
 
-// ============================================
-// CUSTOM MARKER ICONS
-// ============================================
-
-// Shelter marker (blue house icon)
 export const shelterIcon = L.divIcon({
   className: 'custom-shelter-marker',
   html: `<div style="background-color: #3B82F6; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 3px solid white; box-shadow: 0 2px 8px rgba(0,0,0,0.3);">
@@ -35,7 +26,6 @@ export const shelterIcon = L.divIcon({
   popupAnchor: [0, -40]
 });
 
-// User location marker (red pin)
 export const userLocationIcon = L.divIcon({
   className: 'custom-user-marker',
   html: `<div style="background-color: #EF4444; color: white; width: 35px; height: 35px; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); display: flex; align-items: center; justify-content: center; border: 3px solid white; box-shadow: 0 2px 8px rgba(0,0,0,0.3);">
@@ -46,7 +36,6 @@ export const userLocationIcon = L.divIcon({
   popupAnchor: [0, -35]
 });
 
-// Emergency alert marker (orange warning)
 export const emergencyIcon = L.divIcon({
   className: 'custom-emergency-marker',
   html: `<div style="background-color: #F59E0B; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 3px solid white; box-shadow: 0 2px 8px rgba(0,0,0,0.3); animation: pulse 2s infinite;">
@@ -57,19 +46,10 @@ export const emergencyIcon = L.divIcon({
   popupAnchor: [0, -40]
 });
 
-// ============================================
-// MAP INITIALIZATION
-// ============================================
 
-/**
- * Initialize a Leaflet map with OpenStreetMap tiles
- * @param {string} containerId - ID of the HTML element to contain the map
- * @param {Object} options - Map configuration options
- * @returns {L.Map} - Leaflet map instance
- */
 export function initializeMap(containerId, options = {}) {
   const {
-    center = [13.3409, 74.7421], // Default: Udupi, Karnataka
+    center = [13.3409, 74.7421],
     zoom = 13,
     maxZoom = 18,
     minZoom = 10
@@ -80,7 +60,7 @@ export function initializeMap(containerId, options = {}) {
     scrollWheelZoom: true
   }).setView(center, zoom);
 
-  // Add OpenStreetMap tile layer
+
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     maxZoom,
@@ -90,16 +70,9 @@ export function initializeMap(containerId, options = {}) {
   return map;
 }
 
-// ============================================
-// SHELTER MARKERS
-// ============================================
 
-/**
- * Add shelter markers to the map
- * @param {L.Map} map - Leaflet map instance
- * @param {Array} shelters - Array of shelter objects
- * @returns {L.LayerGroup} - Layer group containing all shelter markers
- */
+
+
 export function addShelterMarkers(map, shelters) {
   const markers = [];
 
@@ -153,16 +126,6 @@ export function addShelterMarkers(map, shelters) {
   return L.layerGroup(markers);
 }
 
-// ============================================
-// DANGER ZONES (RED/YELLOW/GREEN)
-// ============================================
-
-/**
- * Add danger zones to the map
- * @param {L.Map} map - Leaflet map instance
- * @param {Array} zones - Array of danger zone objects
- * @returns {L.LayerGroup} - Layer group containing all zone polygons
- */
 export function addDangerZones(map, zones) {
   const polygons = [];
 
@@ -200,16 +163,7 @@ export function addDangerZones(map, zones) {
   return L.layerGroup(polygons);
 }
 
-// ============================================
-// USER LOCATION
-// ============================================
 
-/**
- * Add user's current location marker
- * @param {L.Map} map - Leaflet map instance
- * @param {Object} position - {latitude, longitude}
- * @returns {L.Marker} - User location marker
- */
 export function addUserLocation(map, position) {
   const marker = L.marker([position.latitude, position.longitude], {
     icon: userLocationIcon,
@@ -223,8 +177,7 @@ export function addUserLocation(map, position) {
   `);
 
   marker.addTo(map);
-  
-  // Add a circle around user location
+
   L.circle([position.latitude, position.longitude], {
     color: '#EF4444',
     fillColor: '#EF4444',
@@ -235,21 +188,7 @@ export function addUserLocation(map, position) {
   return marker;
 }
 
-// ============================================
-// ROUTING & DIRECTIONS
-// ============================================
-
-/**
- * Calculate and display route from user to destination
- * @param {L.Map} map - Leaflet map instance
- * @param {Object} from - {latitude, longitude}
- * @param {Object} to - {latitude, longitude}
- */
 export async function showRoute(map, from, to) {
-  // Using OpenRouteService API (free, but requires API key)
-  // Alternative: Use simple straight line or OSRM
-  
-  // For now, draw a simple polyline
   const routeLine = L.polyline([
     [from.latitude, from.longitude],
     [to.latitude, to.longitude]
@@ -260,10 +199,8 @@ export async function showRoute(map, from, to) {
     dashArray: '10, 10'
   }).addTo(map);
 
-  // Fit map to show entire route
   map.fitBounds(routeLine.getBounds(), { padding: [50, 50] });
 
-  // Calculate straight-line distance
   const distance = map.distance(
     [from.latitude, from.longitude],
     [to.latitude, to.longitude]
@@ -279,14 +216,6 @@ export async function showRoute(map, from, to) {
   };
 }
 
-// ============================================
-// GEOLOCATION
-// ============================================
-
-/**
- * Get user's current geolocation
- * @returns {Promise<{latitude: number, longitude: number}>}
- */
 export function getUserLocation() {
   return new Promise((resolve, reject) => {
     if (!navigator.geolocation) {
@@ -314,17 +243,6 @@ export function getUserLocation() {
   });
 }
 
-// ============================================
-// CALCULATE NEAREST SHELTER
-// ============================================
-
-/**
- * Find the nearest shelter to user's location
- * @param {Object} userLocation - {latitude, longitude}
- * @param {Array} shelters - Array of shelter objects
- * @param {string} disasterType - Optional: filter by disaster type
- * @returns {Object} - Nearest shelter with distance
- */
 export function findNearestShelter(userLocation, shelters, disasterType = null) {
   let filteredShelters = shelters.filter(s => s.status === 'open');
 
@@ -355,15 +273,6 @@ export function findNearestShelter(userLocation, shelters, disasterType = null) 
   return sheltersWithDistance[0];
 }
 
-// ============================================
-// MAP LAYERS CONTROL
-// ============================================
-
-/**
- * Create layer control for toggling different map layers
- * @param {L.Map} map - Leaflet map instance
- * @param {Object} layers - Object containing named layers
- */
 export function addLayerControl(map, layers) {
   const baseLayers = {
     'Street Map': L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -379,10 +288,6 @@ export function addLayerControl(map, layers) {
     collapsed: false
   }).addTo(map);
 }
-
-// ============================================
-// EXPORT ALL UTILITIES
-// ============================================
 
 export default {
   initializeMap,
